@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/auth/Login";
 // import Register from './pages/auth/Register'
 import Dashboard from "./pages/Dashboard";
+import TimeTracking from "./pages/TimeTracking/TimeTracking";
+import TimeTrackingManagement from "./pages/TimeTracking/TimeTrackingManagement/TimeTrackingManagement";
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
 
         {/* App */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/time-tracking" element={<TimeTracking />} />
+        <Route path="/time-tracking/management" element={<TimeTrackingManagement />} />
 
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/login" replace />} />

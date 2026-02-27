@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FiUser,
   FiLock,
@@ -11,8 +12,12 @@ import Design1 from "../../assets/Design1.svg";
 import ResumeLogo from "../../assets/Resume_Logo.png";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState({ username: "", password: "" });
+  const [form, setForm] = useState({
+    username: "jk.gaviola@gabtechglobal.com",
+    password: "Gabtech32",
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,7 +25,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: handle auth
+    navigate("/dashboard");
   };
 
   return (
